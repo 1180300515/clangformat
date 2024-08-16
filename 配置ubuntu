@@ -1,0 +1,38 @@
+# 换源
+cd /etc/apt/sources.list.d/
+sudo vim ubuntu.sources
+```
+Enabled: no
+Types: deb
+URIs: http://archive.ubuntu.com/ubuntu
+Suites: noble noble-updates
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+Enabled: no
+Types: deb
+URIs: http://security.ubuntu.com/ubuntu
+Suites: noble-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+```
+sudo vim third-party.sources
+```
+Enabled: yes
+Types: deb
+URIs: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+Suites: noble noble-updates noble-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+```
+
+# git
+git config --global user.name ""
+git config --global user.email ""
+
+ssh-keygen -t rsa -C ""
+cat ~/.ssh/id_rsa.pub
+
+# 软件
+sudo apt install cmake gdb gcc build-essential wget curl pkg-config
+sudo apt install libgoogle-glog-dev libcpp-httplib-dev libjsoncpp-dev libyaml-cpp-dev libsqlite3-dev
